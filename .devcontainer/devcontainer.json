@@ -1,0 +1,25 @@
+// .devcontainer/devcontainer.json
+{
+  "name": "Kali VPS-like Codespace",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "image": null,
+  "runArgs": [],
+  "forwardPorts": [22],
+  "portsAttributes": {
+    "22": {
+      "label": "SSH",
+      "onAutoForward": "notify"
+    }
+  },
+  "remoteUser": "root",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "apt-get update || true",
+  "customizations": {
+    "vscode": {
+      "extensions": []
+    }
+  }
+}
